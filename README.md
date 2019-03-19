@@ -1,2 +1,2 @@
-# CTAT_testkit
-small testkit for checking CTAT module executions
+# STAR-Fusion-Tutorial
+Tutorial for STAR-Fusion, FusionInspector, and de novo reconstruction of fusion transcripts using Trinity
