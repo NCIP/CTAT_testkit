@@ -1,6 +1,8 @@
 #!/bin/bash
 
 #rm -rf ./ctat_genome_lib_build_dir
+#rm -f ./build_genome_lib
+
 
 rm -rf ./STAR-Fusion_outdir
 
@@ -13,4 +15,4 @@ rm -f ./pipeliner*
 rm -f ./Log.out
 
 rm -rf ./FI
-rm -f ./build_genome_lib
+
