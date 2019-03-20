@@ -11,3 +11,5 @@ rm -f ./ref_annot.cdna*
 rm -f ./pipeliner*
 
 rm -f ./Log.out
+
+rm -rf ./FI
