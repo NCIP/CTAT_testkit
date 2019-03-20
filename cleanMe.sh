@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rm -rf ./ctat_genome_lib_build_dir
+#rm -rf ./ctat_genome_lib_build_dir
 
 rm -rf ./STAR-Fusion_outdir
 

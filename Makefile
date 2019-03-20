@@ -6,14 +6,23 @@ build_genome_lib:
 	touch build_genome_lib
 
 
-STAR_FUSION_BASIC: build_genome_lib
+STAR_FUSION: build_genome_lib
 	../STAR-Fusion/STAR-Fusion --left_fq rnaseq_1.fastq.gz --right_fq rnaseq_2.fastq.gz --genome_lib_dir ctat_genome_lib_build_dir
 
 
-STAR_FUSION_FULL_MONTY: build_genome_lib
+STAR_FUSION_FULL: build_genome_lib
 	../STAR-Fusion/STAR-Fusion --left_fq rnaseq_1.fastq.gz --right_fq rnaseq_2.fastq.gz --genome_lib_dir ctat_genome_lib_build_dir --FusionInspector validate --denovo_reconstruct --examine_coding_effect 
 
 FusionInspector: build_genome_lib
 	../FusionInspector/FusionInspector --fusions fusion.targets --left_fq rnaseq_1.fastq.gz --right_fq rnaseq_2.fastq.gz  --genome_lib_dir ctat_genome_lib_build_dir --vis
 
 
+FusionInspector_FULL:
+	../FusionInspector/FusionInspector --fusions fusion.targets --left_fq rnaseq_1.fastq.gz --right_fq rnaseq_2.fastq.gz  --genome_lib_dir ctat_genome_lib_build_dir --vis --include_Trinity --examine_coding_effect
+
+
+
+
+
+clean:
+	./cleanMe.sh
