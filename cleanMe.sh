@@ -13,3 +13,4 @@ rm -f ./pipeliner*
 rm -f ./Log.out
 
 rm -rf ./FI
+rm -f ./build_genome_lib
