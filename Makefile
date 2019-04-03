@@ -26,3 +26,8 @@ FusionInspector_FULL:
 
 clean:
 	./cleanMe.sh
+
+
+purge: clean
+	rm -rf ./ctat_genome_lib_build_dir
+
