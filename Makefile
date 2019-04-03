@@ -30,4 +30,5 @@ clean:
 
 purge: clean
 	rm -rf ./ctat_genome_lib_build_dir
+	rm -f ./build_genome_lib
 
