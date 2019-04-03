@@ -17,7 +17,7 @@ FusionInspector: build_genome_lib
 	../FusionInspector/FusionInspector --fusions fusion.targets --left_fq rnaseq_1.fastq.gz --right_fq rnaseq_2.fastq.gz  --genome_lib_dir ctat_genome_lib_build_dir --vis
 
 
-FusionInspector_FULL:
+FusionInspector_FULL: build_genome_lib
 	../FusionInspector/FusionInspector --fusions fusion.targets --left_fq rnaseq_1.fastq.gz --right_fq rnaseq_2.fastq.gz  --genome_lib_dir ctat_genome_lib_build_dir --vis --include_Trinity --examine_coding_effect
 
 
