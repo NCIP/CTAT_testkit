@@ -40,6 +40,7 @@ clean:
 	rm -rf ./FI
 	rm -f ./STAR_FUSION
 	rm -rf ./trinity_fusion
+	rm -rf ./docker_trinity_fusion # likely requires 'sudo make clean'
 
 purge: clean
 	rm -rf ./ctat_genome_lib_build_dir
