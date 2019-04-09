@@ -2,7 +2,7 @@
 
 
 build_genome_lib:
-	../ctat-genome-lib-builder/prep_genome_lib.pl --genome_fa minigenome.fa --gtf minigenome.gtf --fusion_annot_lib CTAT_HumanFusionLib.mini.dat.gz --annot_filter_rule AnnotFilterRule.pm
+	../ctat-genome-lib-builder/prep_genome_lib.pl --genome_fa minigenome.fa --gtf minigenome.gtf --fusion_annot_lib CTAT_HumanFusionLib.mini.dat.gz --annot_filter_rule AnnotFilterRule.pm --gmap_build
 	touch build_genome_lib
 
 
@@ -26,6 +26,8 @@ TrinityFusion: build_genome_lib STAR_FUSION
 	../TrinityFusion/TrinityFusion --left_fq rnaseq_1.fastq.gz --right_fq rnaseq_2.fastq.gz  --chimeric_junctions STAR-Fusion_outdir/Chimeric.out.junction --aligned_bam STAR-Fusion_outdir/Aligned.out.bam --genome_lib_dir ctat_genome_lib_build_dir --output_dir trinity_fusion
 
 
+TrinityFusionDocker: build_genome_lib STAR_FUSION
+	docker run --rm -it -v `pwd`:`pwd` trinityctat/trinityfusion:latest /usr/local/src/TrinityFusion/TrinityFusion --left_fq `pwd`/rnaseq_1.fastq.gz --right_fq `pwd`/rnaseq_2.fastq.gz  --chimeric_junctions `pwd`/STAR-Fusion_outdir/Chimeric.out.junction --aligned_bam `pwd`/STAR-Fusion_outdir/Aligned.out.bam --genome_lib_dir `pwd`/ctat_genome_lib_build_dir --output_dir `pwd`/docker_trinity_fusion
 
 
 clean:
